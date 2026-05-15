@@ -11,6 +11,6 @@ Here, I upload my personal projects for practicing purposes. Maybe you can learn
 
 ## Unfinished Projects
 - Inventory-Management
-=======
+
 # About
 A repository that contains all of the ITC projects. You can learn it from this repository.
