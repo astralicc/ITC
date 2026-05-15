@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/database.php';
 
 $success_message        = null;
 $database_error_message = null;
@@ -11,8 +12,6 @@ $major_error            = null;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $student_data = $_POST;
-
-  // VALIDATION
 
   // Validate name
   if (empty(trim($student_data['student_name'] ?? ''))) {
@@ -55,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $major_error = 'Jurusan tidak valid.';
   }
 
-  // ── INSERT ────────────────────────────────────────────────────
+  // Insert
   if (!$name_error && !$nis_error && !$nisn_error && !$class_error && !$major_error) {
 
     $student_uid   = uniqid("STD");
@@ -65,15 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $student_class = trim($student_data['student_class']);
     $student_major = trim($student_data['student_major']);
 
-    $conn = mysqli_connect('localhost', 'root', '', 'itc_formsekolah');
+    $stmt = $conn->prepare($query);
 
-    if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
+    if (!$stmt) {
+      die("Prepare failed: " . $conn->error);
     }
 
-    $query = "INSERT INTO siswa (student_uid, student_name, student_nis, student_nisn, student_class, student_major) VALUES (?, ?, ?, ?, ?, ?)";
-
-    $stmt = $conn->prepare($query);
     $stmt->bind_param("ssssss", $student_uid, $student_name, $student_nis, $student_nisn, $student_class, $student_major);
 
     try {

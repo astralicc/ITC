@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/database.php';
 
 $success_message        = null;
 $database_error_message = null;
@@ -42,15 +43,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $teacher_nip   = trim($teacher_data['teacher_nip']);
     $teacher_mapel = trim($teacher_data['teacher_mapel']);
 
-    $conn = mysqli_connect('localhost', 'root', '', 'itc_formsekolah');
+    $stmt = $conn->prepare($query);
 
-    if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
+    if (!$stmt) {
+      die("Prepare failed: " . $conn->error);
     }
 
-    $query = "INSERT INTO guru (teacher_uid, teacher_name, teacher_nip, teacher_mapel) VALUES (?, ?, ?, ?)";
-
-    $stmt = $conn->prepare($query);
     $stmt->bind_param("ssss", $teacher_uid, $teacher_name, $teacher_nip, $teacher_mapel);
 
     try {

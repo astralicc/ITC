@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  
+  min-height: 100vh;
+  background-color: #f5f7ff;
+  color: cornflowerblue;
+}
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* extra strong reset (Chrome modern fix) */
+input[type=number] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: 800;
+  font-size: 40px;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+
+  border: thin solid #e4e4e4;
+
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+  display: block;
+
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  color: #32749a;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+form input,
+form textarea,
+form select {
+  display: block;
+
+  width: 100%;
+  padding: 10px;
+
+  font-size: 18px;
+
+  border: thin solid #e4e4e4;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+
+  border-color: #32749a;
+}
+
+form textarea {
+  min-height: 80px;
+}
+
+form input::placeholder {
+  font-size: 16px;
+}
+
+form button {
+  width: 100%;
+  margin-top: 40px;
+  padding: 15px;
+
+  border: none;
+
+  background-color: #32749a;
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+form button:hover {
+  background-color: rgb(80, 210, 80) !important;
+}
+
+form button:active {
+  background-color: darkgreen !important;
+}
+
+form button:focus {
+  outline: none !important;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background-color: white;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+table thead tr {
+  background: linear-gradient(135deg, #8dceff, cornflowerblue, #8dceff) !important;
+  color: white !important;
+}
+
+table thead th {
+  background: transparent !important;
+  color: rgb(255, 255, 255) !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+table th,
+table td {
+  padding: 15px !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  border-bottom: 1px solid #e8eeff !important;
+}
+
+table tbody tr {
+  transition: 0.2s ease;
+}
+
+/* Zebra striping */
+table tbody tr:nth-child(even) td,
+table tbody tr:nth-child(even) th {
+  background-color: #f0f4ff !important;
+}
+
+table tbody tr:hover td,
+table tbody tr:hover th {
+  background-color: #dce7ff !important;
+}
+
+table th {
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+table td {
+  color: #444 !important;
+  font-size: 14px !important;
+}
+
+/* Row number column */
+table tbody tr th {
+  color: cornflowerblue !important;
+  font-weight: 700 !important;
+}
+
+/* Last row no border */
+table tbody tr:last-child td,
+table tbody tr:last-child th {
+  border-bottom: none !important;
+}
