@@ -126,6 +126,28 @@ form button:focus {
   overflow-x: auto;
 }
 
+.auth-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #32749a;
+}
+
+/* The link itself */
+.auth-text a {
+  color: cornflowerblue;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 2px;
+  transition: 0.2s ease;
+}
+
+/* Hover effect */
+.auth-text a:hover {
+  color: #32749a;
+  text-decoration: underline;
+}
+
 table {
   width: 100%;
   min-width: 600px;

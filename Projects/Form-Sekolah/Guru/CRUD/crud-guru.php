@@ -120,7 +120,7 @@ require_once __DIR__ . '/database.php';
                         </div>
 
                         <div class="modal-body">
-                          Yakin ingin menghapus data guru
+                          Yakin ingin menghapus data guru?
                           <strong>
                             <?= htmlspecialchars($row['teacher_name']); ?>
                           </strong> ?

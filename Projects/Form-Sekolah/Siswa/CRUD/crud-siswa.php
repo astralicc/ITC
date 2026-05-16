@@ -129,7 +129,7 @@ require_once __DIR__ . '/database.php';
                         </div>
 
                         <div class="modal-body">
-                          Yakin ingin menghapus data guru
+                          Yakin ingin menghapus data siswa?
                           <strong>
                             <?= htmlspecialchars($row['student_name']); ?>
                           </strong> ?
@@ -142,7 +142,7 @@ require_once __DIR__ . '/database.php';
                           </button>
 
                           <a
-                            href="delete-guru.php?id=<?= (int)$row['teacher_id']; ?>"
+                            href="delete-guru.php?id=<?= (int)$row['student_id']; ?>"
                             class="btn btn-danger">
                             Hapus
                           </a>
